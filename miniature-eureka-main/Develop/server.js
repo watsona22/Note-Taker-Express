@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const routes = require('./miniature-eureka-main/Develop/routes/notes.js');
+const routes = require('./routes/notes.js');
 
 
 
