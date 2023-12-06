@@ -1,5 +1,5 @@
 # Note-Taker-Express
-The purpose of this challenge was to create a command-line application in node using the inquirer package. This program was designed to allow users to create a logo 300 x 200px logo that is saved as a svg file. The application prompts the user to select a color and shape, provide text for the logo. There will also be a test file supported by jest to insure that the application functions as expected. The project demonstrated the use of node to create a program written in Javascript. 
+The purpose of this challenge was to create a command-line application in node using the express package. This program was designed to allow users to save notes to the user interface through the web browser. The application uses Express.js back end to save and retrieve note data from a JSON file. The project demonstrated the use of node to create a program written in Javascript. 
 
 The acceptance criteria were as follows: 
 
@@ -17,9 +17,8 @@ THEN that note appears in the right-hand column and a "New Note" button appears 
 WHEN I click on the "New Note" button in the navigation at the top of the page
 THEN I am presented with empty fields to enter a new note title and the note’s text in the right-hand column and the button disappears
 
-All criteria were met and the program functions as expected. 
 
-I know how to utilize the node environment to create a program using dynamic Javascript. There were helpful error messages in the terminal to direct progress. The inquirer and jest documentation were utilized to created the desired outcome. There were many questions about the render aspect of the application. Initially the shape classes contained extraneous properties, color was the only one needed. Furthermore setting points along the x and y axis for each shape type was complicated and then applying those attributes for each class took some time to figure out. Configuring the tests to work took some trial and error, but ultimately the application was completed as expected. The recurring issue of needing to organize code so that it can be read and debugged is vitally important. Previous eureka moments were just as valuable here - reformatting code, implementing clear naming convention, and notating often.  I am still working to make this a natural part of the build process. 
+This challenge utilized the node environment to create a program using dynamic Javascript. There were helpful error messages in the terminal to direct progress. Express documentation was referenced throughout the project. I attempted to use modularization to organize the various aspects of the application (router, middleware, listeners, etc.). There were however, quite a few hurdles when constructing the backend. The first related to middleware, specifically which to add outside of the typical (json, urlencoded, and static). Furthermore, there were issues pointing to correct path for each route. It was this issue that ultimately stunted my progress. The final error message pointed to a a fetch request on line 40 of the index.js file returning a 404 not found message. In order to further diagnose the issue, I will have to read more on how each fetch request communicates with the route paths and I hope to complete the application some time im the near future. The recurring issue of needing to organize code so that it can be read and debugged is vitally important. Previous eureka moments were just as valuable here - reformatting code, implementing clear naming convention, and notating often.  I am still working to make this a natural part of the build process. 
 
 ## Usage
 
@@ -40,15 +39,3 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 The application should have a db.json file on the back end that will be used to store and retrieve notes using the fs module.
-
-The following HTML routes should be created:
-
-GET /notes should return the notes.html file.
-
-GET * should return the index.html file.
-
-The following API routes should be created:
-
-GET /api/notes should read the db.json file and return all saved notes as JSON.
-
-POST /api/notes should receive a new note to save on the request body, add it to the db.json file, and then return the new note to the client. You'll need to find a way to give each note a unique id when it's saved (look into npm packages that could do this for you).

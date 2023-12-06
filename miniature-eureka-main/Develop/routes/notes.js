@@ -25,6 +25,7 @@ router.get('/', (req, res) => {
         }
     });
 });
+//referenced multiple sources including: https://codeforgeek.com/handle-get-post-request-express-4/
 const dbFilePath = path.join(__dirname, 'db/db.json')
 router.post('../api/notes', async (req, res) => {
     try {
@@ -59,6 +60,7 @@ router.post('../api/notes', async (req, res) => {
 });
 
 module.exports = router;
+
 //get previously stored list
 //read file
 //get notes
