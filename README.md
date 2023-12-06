@@ -22,8 +22,8 @@ This challenge utilized the node environment to create a program using dynamic J
 
 ## Usage
 
-The js file can be used to understand the dynamic code that supports the application. A link to the deployed program is included below, for your convenience. 
-https://drive.google.com/file/d/1NbK17EybQA4E1m2bWwJpXZdhQsKrB1E-/view
+The js file can be used to understand the dynamic code that supports the application. A link to the program (deployed unsuccessfully) is included below, for your convenience. 
+https://git.heroku.com/immense-depths-57447.git
 
 ## Credits
 The project was completed with help from the course materials and assistance from Bootcamp tutor, Erik Hirsch.
