@@ -37,7 +37,7 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('/notes', {
+  fetch('https://glacial-shore-68409-1a441e5df445.herokuapp.com/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
