@@ -43,6 +43,18 @@ const saveNote = (note) =>
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(note)
+      .then(response => {
+        console.log('Response status:', response.status);
+        return response.json();
+      })
+      .then(data => {
+        console.log('Response data:', data);
+        return data;
+      })
+      .catch(error => {
+        console.error('Error during fetch:', error);
+        throw error; // Rethrow the error to propagate it further
+      })
   });
 
 const deleteNote = (id) =>
