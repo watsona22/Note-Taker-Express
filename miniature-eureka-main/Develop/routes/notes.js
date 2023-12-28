@@ -2,15 +2,15 @@ const router = require('express').Router();
 const fs = require('fs');
 const path = require('path');
 //https://www.npmjs.com/package/uniqid
-const uuid = require('uuid');
+const { v4: uuidv } = require('uuid');
 const express = require('express');
 router.use(express.json());
 
 // GET behind the scences routes for notes page
 //referenced heynode for assistance reading and writing json: https://heynode.com/tutorial/readwrite-json-files-nodejs/
-router.get('/', (req, res) => {
+router.get('/api/notes', (req, res) => {
 
-    fs.readFile('db/db.json', 'utf8', (err, jsonString) => {
+    fs.promises.readFile('db/db.json', 'utf8', (err, jsonString) => {
         if (err) {
             console.log("error reading file", err);
             return res.status(500).json(err);
@@ -26,7 +26,7 @@ router.get('/', (req, res) => {
     });
 });
 //referenced multiple sources including: https://codeforgeek.com/handle-get-post-request-express-4/
-const dbFilePath = path.join(__dirname, 'db/db.json')
+const dbFilePath = path.join('db/db.json')
 router.post('../api/notes', async (req, res) => {
     try {
         //read existing notes
