@@ -42,7 +42,7 @@ router.post('../api/notes', async (req, res) => {
         }
         //create new note object
         const newNote = {
-            id: uuid(),
+            id: uuidv(),
             title,
             text,
         };
