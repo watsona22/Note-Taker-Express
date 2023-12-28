@@ -18,8 +18,8 @@ router.get('/api/notes', (req, res) => {
         console.log('File:', jsonString);
 
         try {
-            const notes = JSON.parse(jsonString);
-            res.json(notes);
+            const note = JSON.parse(jsonString);
+            res.json(note);
         } catch (parseError) {
             console.log(parseError);
         }
@@ -27,17 +27,18 @@ router.get('/api/notes', (req, res) => {
 });
 //referenced multiple sources including: https://codeforgeek.com/handle-get-post-request-express-4/
 const dbFilePath = path.join('db/db.json')
-router.post('../api/notes', async (req, res) => {
+router.post('/api/notes', async (req, res) => {
     try {
         //read existing notes
         const presentNote = await fs.readFile(dbFilePath);
-        const notes = JSON.parse(presentNote);
+        const note = JSON.parse(presentNote);
 
         // Destructure for the items in req.body
         const { title, text } = req.body;
+        console.log({ title, text });
 
         //set required properties and validate
-        if (!title && !text) {
+        if (!title || !text) {
             return res.status(400).json({ msg: 'Title and text are required for a new note.' });
         }
         //create new note object
@@ -47,14 +48,14 @@ router.post('../api/notes', async (req, res) => {
             text,
         };
         //Add new note to exisiting notes
-        notes.push(newNote);
+        note.push(newNote);
         //write updated notes to db.json
-        await fs.writeFile(dbFilePath, JSON.stringify(notes));
+        await fs.writeFile(dbFilePath, JSON.stringify(note));
         //respond with new note
         res.json(newNote);
         //create catch statement for server errors
-    } catch (error) {
-        console.error(error);
+    } catch (err) {
+        console.error(err);
         res.status(500).json({ msg: 'Error in posting note' });
     }
 });
