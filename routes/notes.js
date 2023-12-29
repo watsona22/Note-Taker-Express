@@ -27,7 +27,7 @@ router.get('/api/notes', (req, res) => {
 });
 //referenced multiple sources including: https://codeforgeek.com/handle-get-post-request-express-4/
 const dbFilePath = path.join('db/db.json')
-router.post('/notes', async (req, res) => {
+router.post('/api/notes', async (req, res) => {
     try {
         //read existing notes
         const presentNote = await fs.readFile(dbFilePath);
