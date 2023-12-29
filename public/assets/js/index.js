@@ -5,7 +5,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-if (window.location.pathname === '/notes') {
+if (window.location.pathname === 'notes') {
   noteForm = document.querySelector('.note-form');
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -37,24 +37,13 @@ const getNotes = () =>
   });
 
 const saveNote = (note) =>
-  fetch('https://glacial-shore-68409-1a441e5df445.herokuapp.com/notes', {
+  fetch('/api/notes', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify(note)
-      .then(response => {
-        console.log('Response status:', response.status);
-        return response.json();
-      })
-      .then(data => {
-        console.log('Response data:', data);
-        return data;
-      })
-      .catch(error => {
-        console.error('Error during fetch:', error);
-        throw error; // Rethrow the error to propagate it further
-      })
+
   });
 
 const deleteNote = (id) =>
