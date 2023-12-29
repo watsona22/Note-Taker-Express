@@ -18,7 +18,7 @@ app.use('/api/notes', routes);
 
 
 //GET user routes for front end
-app.get('/api/notes', (req, res) => {
+app.get('/notes', (req, res) => {
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 });
 
@@ -28,6 +28,6 @@ app.get('*', (req, res) =>
 );
 
 app.listen(PORT, () =>
-    console.log(`App listening at https://glacial-shore-68409-1a441e5df445.herokuapp.com`)
+    console.log(`App listening at http://localhost:${PORT}`)
 );
 
