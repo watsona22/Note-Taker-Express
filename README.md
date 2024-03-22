@@ -1,8 +1,11 @@
 # Note-Taker-Express
-The purpose of this challenge was to create a command-line application in node using the express package. This program was designed to allow users to save notes to the user interface through the web browser. The application uses Express.js back end to save and retrieve note data from a JSON file. The project demonstrated the use of node to create a program written in Javascript. 
+
+## Description
+This program was designed to allow users to save notes to the user interface through the web browser. The application uses Express.js back end to save and retrieve note data from a JSON file. The project demonstrated the use of node to create a program written in Javascript. 
 
 The acceptance criteria were as follows: 
 
+## Acceptance Criteria
 GIVEN a note-taking application
 WHEN I open the Note Taker
 THEN I am presented with a landing page with a link to a notes page
@@ -24,9 +27,6 @@ This challenge utilized the node environment to create a program using dynamic J
 
 The js file can be used to understand the dynamic code that supports the application. A link to the program (deployed unsuccessfully) is included below, for your convenience. 
 https://git.heroku.com/immense-depths-57447.git
-
-## Credits
-The project was completed with help from the course materials and assistance from Bootcamp tutor, Erik Hirsch.
 
 ## License
 
